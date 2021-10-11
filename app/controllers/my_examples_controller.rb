@@ -11,10 +11,12 @@ class MyExamplesController < ApplicationController
 
   def beer
     i = 99
-    100.times do
-      puts lyrics = "#{i} bottles of beer on the wall, #{i} bottles of beer.
-      Take one down and pass it around, #{i - 1} bottles of beer on the wall."
+    lyrics = ""
+    99.times do
+      lyrics = lyrics + " #{i} bottles of beer on the wall, #{i} bottles of beer.
+      Take one down and pass it around, #{i - 1} bottles of beer on the wall. "
       i -= 1
     end
+    render json: lyrics
   end
 end
