@@ -5,8 +5,12 @@ class MyExamplesController < ApplicationController
   end
 
   def lottery
-    lottery_num = rand(1...60)
-    render json: "Your lottery number is #{lottery_num}."
+    numbers = []
+    6.times do
+      numbers << rand(1...60)
+    end
+
+    render json: "Your lottery numbers are #{numbers}."
   end
 
   def beer
